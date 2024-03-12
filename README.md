@@ -29,7 +29,7 @@ docker-compose up -d
 http://localhost:80
 ```
 
-![image](https://github.com/Jyothidk/deploying-e-commerce-application-on-docker/assets/127189060/967ccd92-5c33-47f3-8b8c-cc741362c635)
+![image](https://github.com/Jyothidk/deploying-e-commerce-application-on-docker/assets/127189060/a6f54f1a-54b4-4faf-9f27-03cd201109d1)
 
 
 ![image](https://github.com/Jyothidk/deploying-e-commerce-application-on-docker/assets/127189060/05a5d23b-f0d7-4a78-9e90-7b136ef21b3e)
