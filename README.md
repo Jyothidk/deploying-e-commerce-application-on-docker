@@ -19,3 +19,9 @@ mkdir mysql rabbitmq redis mongodb
 cd roboshop
 docker-compose up -d
 ```
+
+## Access the roboshop application on browser
+
+```
+http://localhost:80
+```
