@@ -1,0 +1,117 @@
+version: "3.9"
+networks:
+  roboshop:
+    driver: bridge
+volumes:
+# This is equivalent to docker volume create [volume-name]. these are named volumes
+  mysql:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/jyothi/SIVA/mysql
+  redis:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/jyothi/SIVA/redis
+  rabbitmq:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/jyothi/SIVA/rabbitmq
+  mongodb:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/jyothi/SIVA/mongodb
+
+services:
+  web:
+    build:
+      context: web
+    image: jyothi5566/rs-web:v1
+    container_name: web
+    ports:
+    - "80:80"
+    depends_on:
+    - catalogue
+    - user
+    - cart
+    - mysql
+    - shipping
+    - payment
+    
+  mongodb:
+    build:
+      context: mongodb
+    image: jyothi5566/rs-mongodb:v1
+    container_name: mongodb
+    volumes:
+    - mongodb:/data/db
+  catalogue:
+    build:
+      context: catalogue
+    image: jyothi5566/rs-catalogue:v1
+    container_name: catalogue
+    depends_on:
+    - mongodb
+  redis:
+    image: redis
+    container_name: redis
+    volumes:
+    - redis:/data
+  user:
+    build:
+      context: user
+    image: jyothi5566/rs-user:v1
+    container_name: user
+    depends_on:
+    - mongodb
+    - redis
+  cart:
+    build:
+      context: cart
+    image: jyothi5566/rs-cart:v1
+    container_name: cart
+    depends_on:
+    - redis
+    - catalogue
+  mysql:
+    build:
+      context: mysql
+    image: jyothi5566/rs-mysql:v1
+    container_name: mysql
+    volumes:
+    - mysql:/var/lib/mysql
+  shipping:
+    build:
+      context: shipping
+    image: jyothi5566/rs-shipping:v1
+    container_name: shipping
+    depends_on:
+    - mysql
+  rabbitmq:
+    image: rabbitmq
+    container_name: rabbitmq
+    volumes:
+    - rabbitmq:/var/lib/rabbitmq
+  payment:
+    build:
+      context: payment
+    image: jyothi5566/rs-payment:v1
+    container_name: payment
+    depends_on:
+    - rabbitmq
+  ratings:
+    build:
+      context: ratings
+    image: jyothi5566/rs-ratings:v1
+    container_name: ratings
+    depends_on:
+    - mysql
+
+
