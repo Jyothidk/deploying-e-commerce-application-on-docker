@@ -19,9 +19,17 @@ mkdir mysql rabbitmq redis mongodb
 cd roboshop
 docker-compose up -d
 ```
+![image](https://github.com/Jyothidk/deploying-e-commerce-application-on-docker/assets/127189060/9a1f840b-54a9-4bd9-b9ea-b8ba2468a4d4)
+
+![image](https://github.com/Jyothidk/deploying-e-commerce-application-on-docker/assets/127189060/7cdbf5fc-bbec-42eb-973e-90c1fc0d2df9)
 
 ## Access the roboshop application on browser
 
 ```
 http://localhost:80
 ```
+
+![image](https://github.com/Jyothidk/deploying-e-commerce-application-on-docker/assets/127189060/967ccd92-5c33-47f3-8b8c-cc741362c635)
+
+
+![image](https://github.com/Jyothidk/deploying-e-commerce-application-on-docker/assets/127189060/ec620bdd-77c5-4e47-9fb5-69a9853bf53c)
