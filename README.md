@@ -32,4 +32,5 @@ http://localhost:80
 ![image](https://github.com/Jyothidk/deploying-e-commerce-application-on-docker/assets/127189060/967ccd92-5c33-47f3-8b8c-cc741362c635)
 
 
-![image](https://github.com/Jyothidk/deploying-e-commerce-application-on-docker/assets/127189060/ec620bdd-77c5-4e47-9fb5-69a9853bf53c)
+![image](https://github.com/Jyothidk/deploying-e-commerce-application-on-docker/assets/127189060/05a5d23b-f0d7-4a78-9e90-7b136ef21b3e)
+
